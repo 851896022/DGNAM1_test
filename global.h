@@ -6,10 +6,7 @@
 #include <QDir>
 #include <QFile>
 #include <QTimer>
-#include <QSerialPort>
-#include <QSerialPortInfo>
 #include <QDebug>
-#include "simingd.h"
 
 class GLobal : public QObject
 {
@@ -17,20 +14,13 @@ class GLobal : public QObject
 public:
     explicit GLobal(QObject *parent = nullptr);
     ~GLobal();
-    QStringList keyNameList;
-    QList<int> keyNoList;
-    QStringList comNameList;
-    QSerialPort *serialPort=NULL;
-    QStringList sendCache;
-    QTimer sendTimer;
-    SiMingD siMingD;
-    int temp=600;
+    int fre[2];
+    int pow[2];
+    int tfu[2];
+    bool isWorking = true;
 signals:
 
 public slots:
-    bool startLink(QString name);
-    void onReceived();
-    void sendData();
 };
 extern GLobal *g;
 #endif // GLOBAL_H

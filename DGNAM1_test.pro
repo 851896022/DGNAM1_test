@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,7 +16,7 @@ TEMPLATE = app
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
-
+DEFINES += QT_MESSAGELOGCONTEXT
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -27,12 +27,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     DGNAM/dgnamdecode.cpp \
-    global.cpp
+    global.cpp \
+    qlog.cpp
 
 HEADERS += \
         mainwindow.h \
     DGNAM/dgnamdecode.h \
-    global.h
+    global.h \
+    qlog.h
 
 FORMS += \
         mainwindow.ui
