@@ -14,9 +14,9 @@ class GLobal : public QObject
 public:
     explicit GLobal(QObject *parent = nullptr);
     ~GLobal();
-    int fre[2];
-    int pow[2];
-    int tfu[2];
+    int fre[2] = {0};
+    int pow[2]= {0};
+    int tfu[2]= {0};
     bool isWorking = true;
 signals:
 

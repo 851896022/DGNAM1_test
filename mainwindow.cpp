@@ -31,3 +31,15 @@ void MainWindow::onTimOut()
         setStyleSheet("color: rgb(255, 0, 0);");
     }
 }
+
+void MainWindow::on_btnSet_clicked()
+{
+    emit changePort(ui->txtPort->text().toInt());
+    ui->label_port->setText(QString::number(ui->txtPort->text().toInt()));
+}
+
+void MainWindow::on_btnReset_clicked()
+{
+    g->isWorking = true;
+    emit reSet();
+}

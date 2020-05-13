@@ -25,6 +25,16 @@ void DGNAMDecode::initThis(int port)
 
 
 
+    p=port;
+}
+void DGNAMDecode::reInitThis(int port)
+{
+    udp->deleteLater();
+    udp=new QUdpSocket;
+
+    connect(udp,SIGNAL(readyRead()),this,SLOT(onReceived()));
+    udp->bind(port);
+    p=port;
 }
 void DGNAMDecode::onDisCon()
 {
@@ -33,13 +43,30 @@ void DGNAMDecode::onDisCon()
     if(countMp3==50)
     {
         g->isWorking=false;
-        qDebug()<<"调幅度数据丢失";
+        g->fre[0]=8;
+        g->pow[0]=8;
+        g->tfu[0]=8;
+        g->fre[1]=8;
+        g->pow[1]=8;
+        g->tfu[1]=8;
+        qDebug()<<p<<"调幅度数据丢失";
     }
     if(countTfu==50)
     {
         g->isWorking=false;
-        qDebug()<<"音频数据丢失";
+        g->fre[0]=8;
+        g->pow[0]=8;
+        g->tfu[0]=8;
+        g->fre[1]=8;
+        g->pow[1]=8;
+        g->tfu[1]=8;
+        qDebug()<<p<<"音频数据丢失";
     }
+}
+void DGNAMDecode::alarmReset()
+{
+    countTfu=0;
+    countMp3=0;
 }
 void DGNAMDecode::onReceived()
 {
@@ -62,7 +89,7 @@ void DGNAMDecode::onReceived()
                     g->tfu[1]=ch[11+8];
                     if(countTfu>=50)
                     {
-                        qDebug()<<"调幅度数据恢复";
+                        qDebug()<<p<<"调幅度数据恢复";
                         countTfu=0;
                     }
                     else
@@ -72,7 +99,7 @@ void DGNAMDecode::onReceived()
                 }
                 else
                 {
-                    qDebug()<<"参数数据错误："<<QByteArray((char*)ch,size).toHex();
+                    qDebug()<<p<<"参数数据错误："<<QByteArray((char*)ch,size).toHex();
                 }
 
             }
@@ -83,7 +110,7 @@ void DGNAMDecode::onReceived()
                 {
                     if(countMp3>=50)
                     {
-                        qDebug()<<"音频数据恢复";
+                        qDebug()<<p<<"音频数据恢复";
                         countMp3=0;
                     }
                     else
@@ -93,12 +120,12 @@ void DGNAMDecode::onReceived()
                 }
                 else
                 {
-                    qDebug()<<"音频数据错误："<<QByteArray((char*)ch,size).toHex();
+                    qDebug()<<p<<"音频数据错误："<<QByteArray((char*)ch,size).toHex();
                 }
             }
             else
             {
-                qDebug()<<"数据长度异常："<<size;
+                qDebug()<<p<<"数据长度异常："<<size;
             }
 
         }

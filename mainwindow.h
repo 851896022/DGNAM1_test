@@ -20,6 +20,13 @@ private:
     Ui::MainWindow *ui;
 public slots:
     void onTimOut();
+private slots:
+    void on_btnSet_clicked();
+    void on_btnReset_clicked();
+
+signals:
+    void changePort(int);
+    void reSet();
 };
 
 #endif // MAINWINDOW_H

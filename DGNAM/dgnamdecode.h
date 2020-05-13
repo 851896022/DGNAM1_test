@@ -18,12 +18,15 @@ public:
     QByteArray* dataCache[2];
     int countTfu=0;
     int countMp3=0;
+    int p;
 signals:
 
 public slots:
     void onReceived();
     void initThis(int);
+    void reInitThis(int);
     void onDisCon();
+    void alarmReset();
 };
 
 #endif // DGNAMDECODE_H
