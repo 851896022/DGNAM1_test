@@ -1,0 +1,9 @@
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\bin\Debug\MoveWindow.exe
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\bin\Debug\MoveWindow.pdb
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\obj\Debug\MoveWindow.csprojAssemblyReference.cache
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\obj\Debug\MoveWindow.Form1.resources
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\obj\Debug\MoveWindow.Properties.Resources.resources
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\obj\Debug\MoveWindow.csproj.GenerateResource.cache
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\obj\Debug\MoveWindow.csproj.CoreCompileInputs.cache
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\obj\Debug\MoveWindow.exe
+E:\myfile\FRH\Software\DGNAM1_test\DGNAM1_test\MoveWindowApp\MoveWindow\MoveWindow\obj\Debug\MoveWindow.pdb
